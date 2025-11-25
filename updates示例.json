@@ -1,0 +1,12 @@
+{
+  "version": "1.6.14",
+  "publishedAt": "2025-11-21T15:59:33Z",
+  "changelog": "更新:\r\n- 新增对 Nano Banana Pro 生图模型的支持\r\n\r\nUpdates:\r\n- Added support for Nano Banana Pro image generation model\r\n",
+  "downloads": [
+    {
+      "name": "rikkahub_1.6.14_arm64-v8a-release.apk",
+      "url": "https://rikkahub-storage.rerere.me/rikkahub_1.6.14_arm64-v8a-release.apk",
+      "size": "34.14 MB"
+    }
+  ]
+}

@@ -17,7 +17,9 @@ import com.lhzkml.jasmine.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
-private const val API_URL = "https://updates.rikka-ai.com/"
+// 测试环境：更新检查的根服务端接口地址在此更改
+// 正式发布时将该地址替换为真实服务端地址
+private const val API_URL = "https://example.com/"
 
 class UpdateChecker(private val client: OkHttpClient) {
     private val json = Json { ignoreUnknownKeys = true }
