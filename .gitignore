@@ -13,6 +13,7 @@ local.properties
 .kotlin
 android-sdk/
 cmdline-tools/
+/ndk/
 app/build/
 jasmine-remote/
 /.temp/
@@ -21,4 +22,7 @@ jasmine-remote/
 /licenses/
 /platform-tools/
 /platforms/
+/cmake/
+/# MNN native build outputs
+/ai/src/main/cpp/mnn/project/android/build_*/
 /.knownPackages
