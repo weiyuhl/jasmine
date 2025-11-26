@@ -321,8 +321,6 @@
   <string name="reasoning_custom">Custom reasoning budget</string>
 
   <!-- Setting Display Page -->
-  <string name="setting_display_page_show_user_avatar_title">Show User Avatar</string>
-  <string name="setting_display_page_show_user_avatar_desc">Whether to display user avatar in chat messages</string>
   <string name="setting_display_page_auto_collapse_thinking_title">Auto Collapse Thinking</string>
   <string name="setting_display_page_auto_collapse_thinking_desc">Automatically collapse thinking content after thinking is complete</string>
   <string name="setting_display_page_show_updates_title">Show Updates</string>

@@ -36,9 +36,8 @@ fun ChatMessageUserAvatar(
     nickname: String,
     modifier: Modifier = Modifier,
 ) {
-    val settings = LocalSettings.current
     val prevRole = if (messageIndex > 0) messages[messageIndex - 1].role else null
-    if (message.role == MessageRole.USER && prevRole != MessageRole.USER && !message.parts.isEmptyUIMessage() && settings.displaySetting.showUserAvatar) {
+    if (message.role == MessageRole.USER && prevRole != MessageRole.USER && !message.parts.isEmptyUIMessage()) {
         Row(
             modifier = modifier.padding(vertical = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.End),
@@ -81,7 +80,6 @@ fun ChatMessageAssistantAvatar(
     assistant: Assistant?,
     modifier: Modifier = Modifier,
 ) {
-    val settings = LocalSettings.current
     val prevRole = if (messageIndex > 0) messages[messageIndex - 1].role else null
     if (message.role == MessageRole.ASSISTANT && prevRole != message.role && model != null) {
         Row(
