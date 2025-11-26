@@ -278,25 +278,7 @@ fun SettingDisplayPage(vm: SettingVM = koinViewModel()) {
 
             // 移除：聊天列表模型图标与模型名称的开关（始终显示模型图标与名称）
 
-            item {
-                ListItem(
-                    colors = ListItemDefaults.colors(containerColor = Color.Transparent),
-                    headlineContent = {
-                        Text(stringResource(R.string.setting_display_page_show_token_usage_title))
-                    },
-                    supportingContent = {
-                        Text(stringResource(R.string.setting_display_page_show_token_usage_desc))
-                    },
-                    trailingContent = {
-                        Switch(
-                            checked = displaySetting.showTokenUsage,
-                            onCheckedChange = {
-                                updateDisplaySetting(displaySetting.copy(showTokenUsage = it))
-                            }
-                        )
-                    },
-                )
-            }
+            
 
             item {
                 ListItem(

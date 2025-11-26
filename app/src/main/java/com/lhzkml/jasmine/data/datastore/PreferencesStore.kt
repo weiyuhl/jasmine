@@ -347,7 +347,6 @@ data class DisplaySetting(
     val userAvatar: Avatar = Avatar.Dummy,
     val userNickname: String = "",
     val showUserAvatar: Boolean = true,
-    val showTokenUsage: Boolean = true,
     val autoCloseThinking: Boolean = true,
     val showUpdates: Boolean = true,
     val fontSizeRatio: Float = 1.0f,

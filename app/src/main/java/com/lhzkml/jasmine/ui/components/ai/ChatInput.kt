@@ -797,19 +797,16 @@ private fun FilesPicker(
             },
             trailingContent = {
                 // Context Size
-                val settings = LocalSettings.current
-                if (settings.displaySetting.showTokenUsage && conversation.messageNodes.isNotEmpty()) {
-                    val configuredContextSize = assistant.contextMessageSize
-                    val effectiveMessagesAfterTruncation =
-                        conversation.messageNodes.size - conversation.truncateIndex.coerceAtLeast(0)
-                    val actualContextMessageCount =
-                        minOf(effectiveMessagesAfterTruncation, configuredContextSize)
-                    Text(
-                        text = "$actualContextMessageCount/$configuredContextSize",
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.outlineVariant,
-                    )
-                }
+                val configuredContextSize = assistant.contextMessageSize
+                val effectiveMessagesAfterTruncation =
+                    conversation.messageNodes.size - conversation.truncateIndex.coerceAtLeast(0)
+                val actualContextMessageCount =
+                    minOf(effectiveMessagesAfterTruncation, configuredContextSize)
+                Text(
+                    text = "$actualContextMessageCount/$configuredContextSize",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.outlineVariant,
+                )
             },
             modifier = Modifier
                 .clip(MaterialTheme.shapes.large)

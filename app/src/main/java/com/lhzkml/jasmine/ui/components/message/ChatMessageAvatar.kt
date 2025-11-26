@@ -109,15 +109,13 @@ fun ChatMessageAssistantAvatar(
                         style = MaterialTheme.typography.labelSmall,
                         color = LocalContentColor.current.copy(alpha = 0.8f)
                     )
-                    if (settings.displaySetting.showTokenUsage) {
-                        message.usage?.let { usage ->
-                            Text(
-                                text = if (usage.cachedTokens == 0) "${usage.totalTokens.formatNumber()} tokens" else "${usage.totalTokens.formatNumber()} tokens (${usage.cachedTokens.formatNumber()} cached)",
-                                style = MaterialTheme.typography.labelSmall,
-                                color = LocalContentColor.current.copy(alpha = 0.8f),
-                                maxLines = 1,
-                            )
-                        }
+                    message.usage?.let { usage ->
+                        Text(
+                            text = if (usage.cachedTokens == 0) "${usage.totalTokens.formatNumber()} tokens" else "${usage.totalTokens.formatNumber()} tokens (${usage.cachedTokens.formatNumber()} cached)",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = LocalContentColor.current.copy(alpha = 0.8f),
+                            maxLines = 1,
+                        )
                     }
                 }
             }

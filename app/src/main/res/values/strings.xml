@@ -251,6 +251,7 @@
   <string name="about_page_version">Version</string>
   <string name="about_page_system">System</string>
   <string name="about_page_website">Website</string>
+  <string name="add">Add</string>
   <string name="about_page_github">Github</string>
   <string name="about_page_license">License</string>
 
@@ -322,8 +323,6 @@
   <!-- Setting Display Page -->
   <string name="setting_display_page_show_user_avatar_title">Show User Avatar</string>
   <string name="setting_display_page_show_user_avatar_desc">Whether to display user avatar in chat messages</string>
-  <string name="setting_display_page_show_token_usage_title">Show Token &amp; Context Stats</string>
-  <string name="setting_display_page_show_token_usage_desc">Display token usage and message count</string>
   <string name="setting_display_page_auto_collapse_thinking_title">Auto Collapse Thinking</string>
   <string name="setting_display_page_auto_collapse_thinking_desc">Automatically collapse thinking content after thinking is complete</string>
   <string name="setting_display_page_show_updates_title">Show Updates</string>
