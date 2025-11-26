@@ -350,7 +350,6 @@ data class DisplaySetting(
     val fontSizeRatio: Float = 1.0f,
     val skipCropImage: Boolean = false,
     val enableNotificationOnMessageGeneration: Boolean = false,
-    val codeBlockAutoWrap: Boolean = false,
 )
 
 @Serializable

@@ -21,7 +21,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -61,7 +60,7 @@ import com.lhzkmlhighlight.buildHighlightText
 import com.lhzkml.jasmine.R
 import com.lhzkml.jasmine.Screen
 import com.lhzkml.jasmine.ui.context.LocalNavController
-import com.lhzkml.jasmine.ui.context.LocalSettings
+ 
 import com.lhzkml.jasmine.ui.hooks.heroAnimation
 import com.lhzkml.jasmine.ui.modifier.onClick
 import com.lhzkml.jasmine.ui.theme.AtomOneDarkPalette
@@ -92,8 +91,7 @@ fun HighlightCodeBlock(
     val scope = rememberCoroutineScope()
     val navController = LocalNavController.current
     val context = LocalContext.current
-    val settings = LocalSettings.current
-    val autoWrap = settings.displaySetting.codeBlockAutoWrap
+    
 
     val createDocumentLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.CreateDocument("*/*")
@@ -142,20 +140,12 @@ fun HighlightCodeBlock(
                 language = language,
                 modifier = Modifier
                     .animateContentSize()
-                    .then(
-                        if (autoWrap) {
-                            // 换行模式：不需要横向滚动
-                            Modifier
-                        } else {
-                            // 不换行模式：启用横向滚动
-                            Modifier.horizontalScroll(scrollState)
-                        }
-                    ),
+                    .horizontalScroll(scrollState),
                 fontSize = textStyle.fontSize,
                 lineHeight = textStyle.lineHeight,
                 colors = colorPalette,
                 overflow = TextOverflow.Visible,
-                softWrap = autoWrap,
+                softWrap = false,
                 fontFamily = JetbrainsMono
             )
         }

@@ -353,8 +353,7 @@
   <string name="select_and_copy">選擇複製</string>
   <string name="send">發送</string>
   
-  <string name="setting_display_page_code_block_auto_wrap_desc">自動換行程式碼區塊中的長行</string>
-  <string name="setting_display_page_code_block_auto_wrap_title">程式碼區塊自動換行</string>
+  
   <string name="setting_display_page_create_new_conversation_on_start_desc">當應用程式啟動時，自動建立一個新的對話</string>
   <string name="setting_display_page_create_new_conversation_on_start_title">啟動時新建對話</string>
   <string name="setting_display_page_developer_mode">開發者模式</string>
