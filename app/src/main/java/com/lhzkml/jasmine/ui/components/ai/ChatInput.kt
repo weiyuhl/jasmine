@@ -20,6 +20,7 @@ import androidx.compose.foundation.content.consume
 import androidx.compose.foundation.content.contentReceiver
 import androidx.compose.foundation.content.hasMediaType
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.border
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -79,6 +80,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -314,24 +316,36 @@ fun ChatInput(
                         )
                 ) {
                     val containerColor = when {
-                        state.loading -> MaterialTheme.colorScheme.errorContainer // 加载时，红色
+                        state.loading -> Color.White // 加载时，背景改为白色
                         state.isEmpty() -> MaterialTheme.colorScheme.surfaceContainerHigh // 禁用时(输入为空)，灰色
                         else -> MaterialTheme.colorScheme.primary // 启用时(输入非空)，绿色/主题色
                     }
                     val contentColor = when {
-                        state.loading -> MaterialTheme.colorScheme.onErrorContainer
+                        state.loading -> MaterialTheme.colorScheme.error // 加载时，方块为红色
                         state.isEmpty() -> MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f) // 禁用时，内容用带透明度的灰色
                         else -> MaterialTheme.colorScheme.onPrimary
                     }
                     Surface(
-                        modifier = Modifier.fillMaxSize(),
+                        modifier = (if (state.loading) {
+                            Modifier
+                                .fillMaxSize()
+                                .border(2.dp, MaterialTheme.colorScheme.error, CircleShape) // 加红色圆圈
+                        } else {
+                            Modifier.fillMaxSize()
+                        }),
                         shape = CircleShape,
                         color = containerColor,
                         content = {}
                     )
                     if (state.loading) {
                         KeepScreenOn()
-                        Icon(Lucide.X, stringResource(R.string.stop), tint = contentColor)
+                        val stopText = stringResource(R.string.stop)
+                        Box(
+                            modifier = Modifier
+                                .size(14.dp)
+                                .background(color = contentColor)
+                                .semantics { contentDescription = stopText }
+                        )
                     } else {
                         Icon(Lucide.ArrowUp, stringResource(R.string.send), tint = contentColor)
                     }
