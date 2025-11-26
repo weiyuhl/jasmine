@@ -354,8 +354,6 @@
   <string name="search_picker_title">搜索设置</string>
   <string name="select_and_copy">选择复制</string>
   <string name="send">发送</string>
-  <string name="setting_display_page_auto_collapse_thinking_desc">思考完成自动折叠思考内容</string>
-  <string name="setting_display_page_auto_collapse_thinking_title">自动折叠思考</string>
   <string name="setting_display_page_code_block_auto_collapse_desc">默认自动折叠代码块</string>
   <string name="setting_display_page_code_block_auto_collapse_title">代码块自动折叠</string>
   <string name="setting_display_page_code_block_auto_wrap_desc">自动换行代码块中的长行</string>

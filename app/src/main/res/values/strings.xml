@@ -321,8 +321,6 @@
   <string name="reasoning_custom">Custom reasoning budget</string>
 
   <!-- Setting Display Page -->
-  <string name="setting_display_page_auto_collapse_thinking_title">Auto Collapse Thinking</string>
-  <string name="setting_display_page_auto_collapse_thinking_desc">Automatically collapse thinking content after thinking is complete</string>
   <string name="setting_display_page_show_updates_title">Show Updates</string>
   <string name="setting_display_page_show_updates_desc">Whether to display app update notifications</string>
     <string name="setting_display_page_create_new_conversation_on_start_title">New chat on launch</string>

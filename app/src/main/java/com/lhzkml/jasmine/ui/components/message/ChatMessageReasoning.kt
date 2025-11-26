@@ -66,7 +66,6 @@ import com.lhzkml.jasmine.data.model.Assistant
 import com.lhzkml.jasmine.data.model.AssistantAffectScope
 import com.lhzkml.jasmine.data.model.replaceRegexes
 import com.lhzkml.jasmine.ui.components.richtext.MarkdownBlock
-import com.lhzkml.jasmine.ui.context.LocalSettings
 import com.lhzkml.jasmine.ui.modifier.shimmer
 import com.lhzkml.jasmine.utils.extractGeminiThinkingTitle
 import kotlin.time.Clock
@@ -89,7 +88,6 @@ fun ChatMessageReasoning(
 ) {
     var expandState by remember { mutableStateOf(ReasoningCardState.Collapsed) }
     val scrollState = rememberScrollState()
-    val settings = LocalSettings.current
     val loading = reasoning.finishedAt == null
 
     LaunchedEffect(reasoning.reasoning, loading) {
@@ -98,11 +96,7 @@ fun ChatMessageReasoning(
             scrollState.animateScrollTo(scrollState.maxValue)
         } else {
             if (expandState.expanded) {
-                expandState = if (settings.displaySetting.autoCloseThinking) {
-                    ReasoningCardState.Collapsed
-                } else {
-                    ReasoningCardState.Expanded
-                }
+                expandState = ReasoningCardState.Collapsed
             }
         }
     }

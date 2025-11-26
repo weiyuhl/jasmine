@@ -245,23 +245,7 @@ fun SettingDisplayPage(vm: SettingVM = koinViewModel()) {
             
 
             item {
-                ListItem(
-                    colors = ListItemDefaults.colors(containerColor = Color.Transparent),
-                    headlineContent = {
-                        Text(stringResource(R.string.setting_display_page_auto_collapse_thinking_title))
-                    },
-                    supportingContent = {
-                        Text(stringResource(R.string.setting_display_page_auto_collapse_thinking_desc))
-                    },
-                    trailingContent = {
-                        Switch(
-                            checked = displaySetting.autoCloseThinking,
-                            onCheckedChange = {
-                                updateDisplaySetting(displaySetting.copy(autoCloseThinking = it))
-                            }
-                        )
-                    },
-                )
+                
             }
 
             
